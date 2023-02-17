@@ -121,8 +121,9 @@ public class Player extends Subject {
     }
 
     /**
-     * This method is used to set the space that the player is on (Why would space be null though?)
-     * @param space the space where the player is located
+     * This method is used update both the space the Player's robot is moving to
+     * and the space the robot is moving from
+     * @param space the space where the player is to be located
      */
     public void setSpace(Space space) {
         Space oldSpace = this.space;
