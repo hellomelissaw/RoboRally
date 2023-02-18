@@ -47,11 +47,25 @@ public class RoboRally extends Application {
 
     // private AppController appController;
 
+    /**
+     * This methode overrides the methode init() of a supperclass.
+     * This methode can throw Exception.
+     * @throws Exception
+     */
     @Override
     public void init() throws Exception {
         super.init();
     }
 
+    /**
+     * This methode override the methode of a supperclass.
+     * It creates a GUI for the game.
+     * It creates an instance of:
+     * 'AppController', 'menuBar', 'BorderPane', VBox
+     * AppController handels the applications logik,
+     * and an interface between the GUI and the game model.
+     * @param primaryStage
+     */
     @Override
     public void start(Stage primaryStage) {
         stage = primaryStage;
@@ -78,6 +92,11 @@ public class RoboRally extends Application {
         stage.show();
     }
 
+    /**
+     * This methode creates a new boardView,
+     * if the gameController is null.
+     * @param gameController
+     */
     public void createBoardView(GameController gameController) {
         // if present, remove old BoardView
         boardRoot.getChildren().clear();
@@ -91,6 +110,11 @@ public class RoboRally extends Application {
         stage.sizeToScene();
     }
 
+    /**
+     * This methode override stop() of a supperclass.
+     * It will throw Exception
+     * * @throws Exception
+     */
     @Override
     public void stop() throws Exception {
         super.stop();
