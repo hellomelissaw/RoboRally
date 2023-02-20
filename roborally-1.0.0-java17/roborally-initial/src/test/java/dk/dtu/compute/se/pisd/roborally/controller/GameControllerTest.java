@@ -44,4 +44,13 @@ class GameControllerTest {
         Assertions.assertEquals(player, board.getSpace(0, 4).getPlayer(), "Player " + player.getName() + " should beSpace (0,4)!");
     }
 
+    @Test
+    void setCurrentPlayerToNextPlayerAfterMove() {
+        Board board = gameController.board;
+        Player player = board.getCurrentPlayer();
+        gameController.moveCurrentPlayerToSpace(board.getSpace(0, 4));
+        Assertions.assertEquals(2, board.getPlayerNumber(board.getCurrentPlayer()));
+
+    }
+
 }
