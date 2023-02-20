@@ -48,8 +48,9 @@ class GameControllerTest {
     void setCurrentPlayerToNextPlayerAfterMove() {
         Board board = gameController.board;
         Player player = board.getCurrentPlayer();
+        Assertions.assertEquals(0,board.getPlayerNumber(board.getCurrentPlayer()));
         gameController.moveCurrentPlayerToSpace(board.getSpace(0, 4));
-        Assertions.assertEquals(2, board.getPlayerNumber(board.getCurrentPlayer()));
+        Assertions.assertEquals(1, board.getPlayerNumber(board.getCurrentPlayer()));
 
     }
 
