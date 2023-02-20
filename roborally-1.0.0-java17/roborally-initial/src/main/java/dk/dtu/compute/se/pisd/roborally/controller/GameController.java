@@ -46,17 +46,21 @@ public class GameController {
      */
     public void moveCurrentPlayerToSpace(@NotNull Space space)  {
         Player currentPlayer = board.getCurrentPlayer();
-        if(space.getPlayer() == null)
+        System.out.println("Current player before move: " + board.getCurrentPlayer().getName() + "Number is: " + board.getPlayerNumber(board.getCurrentPlayer()));
+        if(space.getPlayer() == null) {
             space.setPlayer(currentPlayer);
 
-        int nextPlayerIndex = board.getPlayerNumber(currentPlayer)+2;
+        }
+
+        int nextPlayerIndex = board.getPlayerNumber(currentPlayer)+1;
         board.setCurrentPlayer(board.getPlayer(nextPlayerIndex));
+        System.out.println("Current player after move: " + board.getCurrentPlayer().getName() + "Number is: " + board.getPlayerNumber(board.getCurrentPlayer()));
 
         // TODO Assignment V1: method should be implemented by the students:
         //   - the current player should be moved to the given space
-        //     (if it is free()
+        //     (if it is free() ---METHOD WORKS BUT NEEDS TO PICK SPACE ON MOUSE CLICK---
         //   - and the current player should be set to the player
-        //     following the current player
+        //     following the current player ---DONE---
         //   - the counter of moves in the game should be increased by one
         //     if the player is moved
 
