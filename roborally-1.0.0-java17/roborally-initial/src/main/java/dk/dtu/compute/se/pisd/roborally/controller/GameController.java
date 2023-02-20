@@ -46,13 +46,19 @@ public class GameController {
      */
     public void moveCurrentPlayerToSpace(@NotNull Space space)  {
         Player currentPlayer = board.getCurrentPlayer();
+
         System.out.println("Current player before move: " + board.getCurrentPlayer().getName() + "Number is: " + board.getPlayerNumber(board.getCurrentPlayer()));
         if(space.getPlayer() == null) {
             space.setPlayer(currentPlayer);
 
         }
 
-        int nextPlayerIndex = board.getPlayerNumber(currentPlayer)+1;
+        int nextPlayerIndex;
+
+        if(board.getPlayerNumber(currentPlayer) == board.getPlayersNumber()-1){
+            nextPlayerIndex = 0;}
+        else { nextPlayerIndex = board.getPlayerNumber(currentPlayer)+1;}
+
         board.setCurrentPlayer(board.getPlayer(nextPlayerIndex));
         System.out.println("Current player after move: " + board.getCurrentPlayer().getName() + "Number is: " + board.getPlayerNumber(board.getCurrentPlayer()));
 
